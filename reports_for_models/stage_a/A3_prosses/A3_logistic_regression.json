@@ -1,0 +1,62 @@
+{
+  "summary": {
+    "stage": "A3_logistic_regression",
+    "accuracy": 0.627,
+    "macro_f1": 0.578,
+    "most_exp_error": {
+      "description": "actual=high -> pred=low",
+      "count": 39,
+      "rate": 0.028
+    }
+  },
+  "full_report": {
+    "low": {
+      "precision": 0.6624203821656051,
+      "recall": 0.2861072902338377,
+      "f1-score": 0.39961575408261285,
+      "support": 727.0
+    },
+    "medium": {
+      "precision": 0.5879805089334055,
+      "recall": 0.7423103212576897,
+      "f1-score": 0.6561933534743203,
+      "support": 1463.0
+    },
+    "high": {
+      "precision": 0.6709493219129193,
+      "recall": 0.685131195335277,
+      "f1-score": 0.6779661016949152,
+      "support": 1372.0
+    },
+    "accuracy": 0.6271757439640652,
+    "macro avg": {
+      "precision": 0.6404500710039766,
+      "recall": 0.5711829356089347,
+      "f1-score": 0.5779250697506161,
+      "support": 3562.0
+    },
+    "weighted avg": {
+      "precision": 0.6351312667233275,
+      "recall": 0.6271757439640652,
+      "f1-score": 0.6122125269164552,
+      "support": 3562.0
+    }
+  },
+  "confusion_matrix": {
+    "pred_low": {
+      "actual_low": 208,
+      "actual_medium": 67,
+      "actual_high": 39
+    },
+    "pred_medium": {
+      "actual_low": 368,
+      "actual_medium": 1086,
+      "actual_high": 393
+    },
+    "pred_high": {
+      "actual_low": 151,
+      "actual_medium": 310,
+      "actual_high": 940
+    }
+  }
+}

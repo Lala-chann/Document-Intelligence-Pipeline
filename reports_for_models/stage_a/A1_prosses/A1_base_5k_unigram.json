@@ -1,0 +1,62 @@
+{
+  "summary": {
+    "stage": "A1_base_5k_unigram",
+    "accuracy": 0.572,
+    "macro_f1": 0.528,
+    "most_exp_error": {
+      "description": "actual=high -> pred=low",
+      "count": 51,
+      "rate": 0.037
+    }
+  },
+  "full_report": {
+    "low": {
+      "precision": 0.5409836065573771,
+      "recall": 0.2723521320495186,
+      "f1-score": 0.36230558096980786,
+      "support": 727.0
+    },
+    "medium": {
+      "precision": 0.5388101983002833,
+      "recall": 0.6500341763499659,
+      "f1-score": 0.5892193308550185,
+      "support": 1463.0
+    },
+    "high": {
+      "precision": 0.6198462613556953,
+      "recall": 0.6465014577259475,
+      "f1-score": 0.6328933285765251,
+      "support": 1372.0
+    },
+    "accuracy": 0.5715889949466592,
+    "macro avg": {
+      "precision": 0.5665466887377852,
+      "recall": 0.5229625887084773,
+      "f1-score": 0.5281394134671172,
+      "support": 3562.0
+    },
+    "weighted avg": {
+      "precision": 0.5704670052387821,
+      "recall": 0.5715889949466592,
+      "f1-score": 0.5597287156689879,
+      "support": 3562.0
+    }
+  },
+  "confusion_matrix": {
+    "pred_low": {
+      "actual_low": 198,
+      "actual_medium": 117,
+      "actual_high": 51
+    },
+    "pred_medium": {
+      "actual_low": 380,
+      "actual_medium": 951,
+      "actual_high": 434
+    },
+    "pred_high": {
+      "actual_low": 149,
+      "actual_medium": 395,
+      "actual_high": 887
+    }
+  }
+}

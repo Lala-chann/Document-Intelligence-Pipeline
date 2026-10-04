@@ -1,0 +1,23 @@
+{
+  "rows_in": 23746,
+  "target": "priority",
+  "seed": 42,
+  "rows_train": 16622,
+  "rows_val": 3562,
+  "rows_test": 3562,
+  "train_priority_distribution": {
+    "medium": 0.411,
+    "high": 0.385,
+    "low": 0.204
+  },
+  "val_priority_distribution": {
+    "medium": 0.411,
+    "high": 0.385,
+    "low": 0.204
+  },
+  "test_priority_distribution": {
+    "medium": 0.411,
+    "high": 0.385,
+    "low": 0.204
+  }
+}

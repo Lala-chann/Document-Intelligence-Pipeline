@@ -1,0 +1,62 @@
+{
+  "summary": {
+    "stage": "A3_naive_bayes",
+    "accuracy": 0.521,
+    "macro_f1": 0.391,
+    "most_exp_error": {
+      "description": "actual=high -> pred=low",
+      "count": 0,
+      "rate": 0.0
+    }
+  },
+  "full_report": {
+    "low": {
+      "precision": 0.875,
+      "recall": 0.009628610729023384,
+      "f1-score": 0.01904761904761905,
+      "support": 727.0
+    },
+    "medium": {
+      "precision": 0.4921803127874885,
+      "recall": 0.7313738892686261,
+      "f1-score": 0.5883970305196591,
+      "support": 1463.0
+    },
+    "high": {
+      "precision": 0.563768115942029,
+      "recall": 0.5670553935860059,
+      "f1-score": 0.565406976744186,
+      "support": 1372.0
+    },
+    "accuracy": 0.5207748455923639,
+    "macro avg": {
+      "precision": 0.6436494762431725,
+      "recall": 0.43601929786121846,
+      "f1-score": 0.39095054210382135,
+      "support": 3562.0
+    },
+    "weighted avg": {
+      "precision": 0.5978873252893205,
+      "recall": 0.5207748455923639,
+      "f1-score": 0.4633382500816686,
+      "support": 3562.0
+    }
+  },
+  "confusion_matrix": {
+    "pred_low": {
+      "actual_low": 7,
+      "actual_medium": 1,
+      "actual_high": 0
+    },
+    "pred_medium": {
+      "actual_low": 510,
+      "actual_medium": 1070,
+      "actual_high": 594
+    },
+    "pred_high": {
+      "actual_low": 210,
+      "actual_medium": 392,
+      "actual_high": 778
+    }
+  }
+}

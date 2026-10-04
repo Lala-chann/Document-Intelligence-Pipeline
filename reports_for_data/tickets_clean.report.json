@@ -1,0 +1,15 @@
+{
+  "rows_in": 61765,
+  "rows_after_language_filter": 28261,
+  "tickets_with_placeholder": 923,
+  "dropped_empty_body": 1,
+  "rows_out": 28260,
+  "emails_masked": 0,
+  "phones_masked": 1,
+  "placeholder_like_found": 953,
+  "target_nulls": {
+    "type": 0,
+    "queue": 0,
+    "priority": 0
+  }
+}

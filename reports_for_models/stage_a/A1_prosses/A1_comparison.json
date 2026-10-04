@@ -1,0 +1,42 @@
+[
+  {
+    "stage":"A1_base_5k_unigram",
+    "accuracy":0.572,
+    "macro_f1":0.528,
+    "most_exp_error.description":"actual=high -> pred=low",
+    "most_exp_error.count":51,
+    "most_exp_error.rate":0.037
+  },
+  {
+    "stage":"A1_base_20k_unigram",
+    "accuracy":0.573,
+    "macro_f1":0.53,
+    "most_exp_error.description":"actual=high -> pred=low",
+    "most_exp_error.count":50,
+    "most_exp_error.rate":0.036
+  },
+  {
+    "stage":"A1_20k_bigram",
+    "accuracy":0.613,
+    "macro_f1":0.565,
+    "most_exp_error.description":"actual=high -> pred=low",
+    "most_exp_error.count":44,
+    "most_exp_error.rate":0.032
+  },
+  {
+    "stage":"A1_40k_bigram",
+    "accuracy":0.627,
+    "macro_f1":0.578,
+    "most_exp_error.description":"actual=high -> pred=low",
+    "most_exp_error.count":39,
+    "most_exp_error.rate":0.028
+  },
+  {
+    "stage":"A1_20k_trigram",
+    "accuracy":0.601,
+    "macro_f1":0.551,
+    "most_exp_error.description":"actual=high -> pred=low",
+    "most_exp_error.count":44,
+    "most_exp_error.rate":0.032
+  }
+]

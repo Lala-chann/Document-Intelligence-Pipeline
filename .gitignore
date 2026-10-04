@@ -1,0 +1,11 @@
+data/raw/
+data/cleaned/
+data/processed/
+
+!data/raw/*.meta.json
+
+.env
+__pycache__/
+*.pyc
+*.pyo
+env/

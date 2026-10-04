@@ -1,0 +1,84 @@
+{
+  "full_reports": {
+    "without_balanced": {
+      "high": {
+        "precision": 0.6178803172314348,
+        "recall": 0.6246355685131195,
+        "f1-score": 0.6212395795578108,
+        "support": 1372.0
+      },
+      "low": {
+        "precision": 0.5918367346938775,
+        "recall": 0.2393397524071527,
+        "f1-score": 0.34084231145935356,
+        "support": 727.0
+      },
+      "medium": {
+        "precision": 0.5534290271132376,
+        "recall": 0.7115516062884484,
+        "f1-score": 0.6226076555023924,
+        "support": 1463.0
+      },
+      "accuracy": 0.5816956765861875,
+      "macro avg": {
+        "precision": 0.5877153596795167,
+        "recall": 0.5251756424029068,
+        "f1-score": 0.5282298488398522,
+        "support": 3562.0
+      },
+      "weighted avg": {
+        "precision": 0.5860931409406637,
+        "recall": 0.5816956765861875,
+        "f1-score": 0.5645727298102938,
+        "support": 3562.0
+      }
+    },
+    "with_balanced": {
+      "high": {
+        "precision": 0.6256809338521401,
+        "recall": 0.5860058309037901,
+        "f1-score": 0.6051938276251412,
+        "support": 1372.0
+      },
+      "low": {
+        "precision": 0.43398268398268397,
+        "recall": 0.5515818431911967,
+        "f1-score": 0.48576620230163536,
+        "support": 727.0
+      },
+      "medium": {
+        "precision": 0.6008869179600886,
+        "recall": 0.5557074504442926,
+        "f1-score": 0.5774147727272727,
+        "support": 1463.0
+      },
+      "accuracy": 0.566535654126895,
+      "macro avg": {
+        "precision": 0.5535168452649709,
+        "recall": 0.5644317081797597,
+        "f1-score": 0.5561249342180165,
+        "support": 3562.0
+      },
+      "weighted avg": {
+        "precision": 0.5763720419641092,
+        "recall": 0.566535654126895,
+        "f1-score": 0.5694092568992091,
+        "support": 3562.0
+      }
+    }
+  },
+  "summary": {
+    "without_balanced": {
+      "accuracy": 0.582,
+      "macro_f1": 0.528,
+      "low_recall": 0.239,
+      "low_precision": 0.592
+    },
+    "with_balanced": {
+      "accuracy": 0.567,
+      "macro_f1": 0.556,
+      "low_recall": 0.552,
+      "low_precision": 0.434
+    }
+  }
+}
