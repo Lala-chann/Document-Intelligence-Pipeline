@@ -60,5 +60,13 @@ if len(conflicting) > 0:
     sample_key = conflicting.index[0]
     print(df[df["_key"] == sample_key][["text", "priority"]].head())
 
+#TODO 5:
 
+import pandas as pd
+
+val_df = pd.read_parquet(PROJECT_ROOT / "data" / "processed" / "val.parquet")
+
+high_df = val_df[val_df["priority"] == "high"].sample(5, random_state=42)
+for t in high_df["text"]:
+    print(t[:200], "\n---")
 

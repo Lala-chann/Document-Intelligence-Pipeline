@@ -1,0 +1,62 @@
+{
+  "summary": {
+    "stage": "C_claude_fable_zeroshot",
+    "accuracy": 0.37,
+    "macro_f1": 0.37,
+    "most_exp_error": {
+      "description": "actual=high -> pred=low",
+      "count": 17,
+      "rate": 0.436
+    }
+  },
+  "full_report": {
+    "low": {
+      "precision": 0.24444444444444444,
+      "recall": 0.55,
+      "f1-score": 0.3384615384615385,
+      "support": 20.0
+    },
+    "medium": {
+      "precision": 0.43333333333333335,
+      "recall": 0.3170731707317073,
+      "f1-score": 0.36619718309859156,
+      "support": 41.0
+    },
+    "high": {
+      "precision": 0.52,
+      "recall": 0.3333333333333333,
+      "f1-score": 0.40625,
+      "support": 39.0
+    },
+    "accuracy": 0.37,
+    "macro avg": {
+      "precision": 0.39925925925925926,
+      "recall": 0.4001355013550136,
+      "f1-score": 0.37030290718671005,
+      "support": 100.0
+    },
+    "weighted avg": {
+      "precision": 0.42935555555555555,
+      "recall": 0.37,
+      "f1-score": 0.3762706527627302,
+      "support": 100.0
+    }
+  },
+  "confusion_matrix": {
+    "pred_low": {
+      "actual_low": 11,
+      "actual_medium": 17,
+      "actual_high": 17
+    },
+    "pred_medium": {
+      "actual_low": 8,
+      "actual_medium": 13,
+      "actual_high": 9
+    },
+    "pred_high": {
+      "actual_low": 1,
+      "actual_medium": 11,
+      "actual_high": 13
+    }
+  }
+}
