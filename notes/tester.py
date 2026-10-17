@@ -70,3 +70,7 @@ high_df = val_df[val_df["priority"] == "high"].sample(5, random_state=42)
 for t in high_df["text"]:
     print(t[:200], "\n---")
 
+#TODO 6:
+df = pd.read_parquet(PROJECT_ROOT/"data"/"processed"/"train.parquet")
+print(sorted(df["queue"].unique()))
+
