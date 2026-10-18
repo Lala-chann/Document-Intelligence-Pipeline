@@ -35,3 +35,4 @@ class TicketResponse(BaseModel):
     priority : Priority
     model_used : ModelChoice
     latency_ms : float
+    cached : bool = False
