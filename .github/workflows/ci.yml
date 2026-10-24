@@ -1,22 +1,27 @@
-
 name: CI
  
 on:
   push:
   pull_request:
- 
-permissions:
-  contents: read
+  workflow_dispatch:   # Actions bolmesinden "Run workflow" ile elle isletmek ucun
  
 jobs:
   build-and-smoke-test:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write   # yalniz image GHCR-e gonderilende lazimdir
+    env:
+      DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
     steps:
       - name: Checkout
         uses: actions/checkout@v7
  
       - name: Build Docker image
-        run: docker build -t ticket-triage .
+        run: |
+          docker build \
+            --label "org.opencontainers.image.source=${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}" \
+            -t ticket-triage .
  
       - name: Start container
         run: docker run -d --name api -p 8000:8000 ticket-triage
@@ -41,6 +46,21 @@ jobs:
           echo "$response"
           echo "$response" | grep -q '"priority"'
  
+      # Yalniz test kecibse VE (default branch-e push olubsa YA elle isledilibse) gonderilir
+      - name: Push image to GitHub Container Registry
+        if: success() && (github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref_name == env.DEFAULT_BRANCH))
+        env:
+          REGISTRY_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          IMAGE="ghcr.io/${GITHUB_REPOSITORY,,}"   # GHCR ad yalniz kicik herflerle olmalidir
+          echo "$REGISTRY_TOKEN" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+          docker tag ticket-triage "$IMAGE:$GITHUB_SHA"
+          docker push "$IMAGE:$GITHUB_SHA"
+          if [ "$GITHUB_REF_NAME" = "$DEFAULT_BRANCH" ]; then
+            docker tag ticket-triage "$IMAGE:latest"
+            docker push "$IMAGE:latest"
+          fi
+ 
       - name: Show container logs on failure
         if: failure()
         run: docker logs api
@@ -48,4 +68,3 @@ jobs:
       - name: Stop container
         if: always()
         run: docker rm -f api
- 
