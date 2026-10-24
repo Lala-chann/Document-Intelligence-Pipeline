@@ -10,6 +10,4 @@ __pycache__/
 *.pyo
 env/
 
-models_store/
-
 notes/

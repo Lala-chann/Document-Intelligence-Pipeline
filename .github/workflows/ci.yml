@@ -1,0 +1,51 @@
+
+name: CI
+ 
+on:
+  push:
+  pull_request:
+ 
+permissions:
+  contents: read
+ 
+jobs:
+  build-and-smoke-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+ 
+      - name: Build Docker image
+        run: docker build -t ticket-triage .
+ 
+      - name: Start container
+        run: docker run -d --name api -p 8000:8000 ticket-triage
+ 
+      - name: Wait for /status
+        run: |
+          for i in $(seq 1 30); do
+            if curl --fail --silent http://localhost:8000/status > /dev/null; then
+              echo "API is up"
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "API did not become ready in time"
+          exit 1
+ 
+      - name: Smoke test /predict (SVM)
+        run: |
+          response=$(curl --fail --silent -X POST http://localhost:8000/predict \
+            -H "Content-Type: application/json" \
+            -d '{"subject":"Internet down","body":"My internet has been down for 3 days, please help urgently","queue":"Technical Support","model":"svm"}')
+          echo "$response"
+          echo "$response" | grep -q '"priority"'
+ 
+      - name: Show container logs on failure
+        if: failure()
+        run: docker logs api
+ 
+      - name: Stop container
+        if: always()
+        run: docker rm -f api
+ 
