@@ -15,8 +15,8 @@ from src.api.lru_cache import LRUCache, make_key
 
 
 limiters = {
-    "svm" : SlidingWindowRateLimiter(limit=20,window_seconds=60),
-    "claude" : SlidingWindowRateLimiter(limit=5, window_seconds=60),
+    "svm" : SlidingWindowRateLimiter(limit=5,window_seconds=60),
+    "claude" : SlidingWindowRateLimiter(limit=2, window_seconds=60),
 }
 
 cache = LRUCache(capacity=500)
